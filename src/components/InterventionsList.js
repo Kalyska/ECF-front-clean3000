@@ -3,16 +3,18 @@ import Header from './Header';
 import interventions from './New';
 
 function InterventionsList() {
-    const intList = [...interventions].map(id => {
-        return (
-            <div className="int-detail" key={id}>
-                <span>{id}</span>
-                <span>{tech}</span>
-                <span>{client}</span>
-                <span>{text}</span>
-            </div>
-        )
-    })
+
+
+    // const intList = data.map(id => {
+    //     return (
+    //         <div className="int-detail" key={id}>
+    //             {/* <span>{id}</span>
+    //             <span>{tech}</span>
+    //             <span>{client}</span>
+    //             <span>{text}</span> */}
+    //         </div>
+    //     )
+    // })
 
     return (
         <div className="App">
@@ -29,7 +31,7 @@ function InterventionsList() {
                         </tr>
                     </thead>
                     <tbody>
-                        {intList}
+                        {/* {intList} */}
                     </tbody>
                 </table>
             </div>

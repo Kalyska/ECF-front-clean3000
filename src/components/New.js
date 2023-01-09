@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import Header from './Header';
+import { useDispatch, useSelector } from 'react-redux';
+import { addInt } from '../slices';
 
-function New(){
+
+function New() {
+    const dispatch = useDispatch()
+    const interventions = useSelector(state => state.data.interventions);
+
     const [tech, setTech] = useState("");
     const [client, setClient] = useState("");
     const [text, setText] = useState("");
-    const [interventions, setInterventions] = useState([]);
 
-    const addInt = () => {
-        const newInt = {
-            id: new Date(),
-            tech,
-            client,
-            text,
-        };
 
-        setInterventions([...interventions, newInt]);
+    function handleClick (tech, client, text){
+        dispatch(addInt(tech, client, text ));
+
         setTech("");
         setClient("");
         setText("");
@@ -49,7 +49,7 @@ function New(){
                         onChange={(e) => setText(e.target.value)}
                         value={text}
                     />
-                    <button onClick={() => addInt()}>Valider</button>
+                    <button onClick={() => handleClick(tech , client, text )}>Valider</button>
                 </form>
             </div>
         </div>
