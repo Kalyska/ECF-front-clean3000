@@ -2,6 +2,12 @@
 @use 'mixins' as m;
 @use 'reset';
 
+.App{
+  background-image: url('../../public/img/bg-img.jpg');
+  background-size: cover;
+  min-height: 100vh;
+}
+
 .App-header{
   width: 100vw;
   background-color: v.$color-bg;
@@ -10,12 +16,27 @@
   padding : 2rem 5rem;
 
   img{
-    width: 200px;
+    max-width: 200px;
   }
 
   li{
     display: inline-block;
     color: v.$color-text;
     padding-left:2rem
+  }
+}
+
+.menu-App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30vh;
+
+  button{
+    display:block;
+    @include m.button;
+    font-size: 2rem;
+    min-width: 300px
   }
 }
