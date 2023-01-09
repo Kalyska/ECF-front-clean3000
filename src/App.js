@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import './styles/App.scss';
 import Header from './components/Header'
 
-const App=()=>{
+function App(){
   const navigate = useNavigate();
 
   return (
