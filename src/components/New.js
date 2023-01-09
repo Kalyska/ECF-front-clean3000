@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import Header from './Header';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addInt } from '../slices';
 
 
 function New() {
     const dispatch = useDispatch()
-    const interventions = useSelector(state => state.data.interventions);
 
     const [tech, setTech] = useState("");
     const [client, setClient] = useState("");
     const [text, setText] = useState("");
 
 
-    function handleClick (tech, client, text){
+    function handleClick(tech, client, text) {
         const newInt = {
             id: new Date().toLocaleString(),
             tech,
@@ -33,6 +32,7 @@ function New() {
             <Header />
             <div className="New">
                 <form>
+                    <h2>Bon d'intervention</h2>
                     <input
                         type="text"
                         className="new-input"
@@ -55,7 +55,7 @@ function New() {
                         onChange={(e) => setText(e.target.value)}
                         value={text}
                     />
-                    <button onClick={() => handleClick(tech , client, text )}>Valider</button>
+                    <button onClick={() => handleClick(tech, client, text)}>Valider</button>
                 </form>
             </div>
         </div>
