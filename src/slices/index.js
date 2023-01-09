@@ -9,16 +9,10 @@ export const dataSlice = createSlice({
     initialState,
     reducers: {
         addInt: (state, { payload }) => {
-            const newInt = {
-                id: new Date().toLocaleString(),
-                tech: payload.tech,
-                client: payload.client,
-                text: payload.text
-            }
             // Mise à jour du localStorage
-            localStorage.setItem('interventions', JSON.stringify([...state.interventions, newInt]));
+            localStorage.setItem('interventions', JSON.stringify([...state.interventions, payload]));
             // Mise à jour du state global
-            state.interventions.push(newInt);
+            state.interventions.push(payload);
         },
     }
 });

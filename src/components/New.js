@@ -14,7 +14,13 @@ function New() {
 
 
     function handleClick (tech, client, text){
-        dispatch(addInt(tech, client, text ));
+        const newInt = {
+            id: new Date().toLocaleString(),
+            tech,
+            client,
+            text,
+        }
+        dispatch(addInt(newInt));
 
         setTech("");
         setClient("");
