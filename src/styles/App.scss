@@ -21,7 +21,11 @@ h2 {
   background-color: v.$color-bg;
   display: flex;
   justify-content: space-between;
-  padding: 2rem 5rem;
+  padding: 1rem;
+
+  @include m.media(v.$md){
+    padding: 2rem 5rem;
+  }
 
   img {
     max-width: 200px;
@@ -30,7 +34,8 @@ h2 {
   li {
     display: inline-block;
     color: v.$color-text;
-    padding-left: 2rem
+    padding-left: 2rem;
+    padding-top: 1rem
   }
 }
 
