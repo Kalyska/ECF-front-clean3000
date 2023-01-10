@@ -12,7 +12,7 @@ function New() {
     const [text, setText] = useState("");
 
 
-    function handleClick(tech, client, text) {
+    function handleSubmit(tech, client, text) {
         const newInt = {
             id: new Date().toLocaleString(),
             tech,
@@ -31,7 +31,7 @@ function New() {
         <div className="App">
             <Header />
             <div className="New">
-                <form>
+                <form onSubmit={() => handleSubmit(tech, client, text)}>
                     <h2>Bon d'intervention</h2>
                     <input
                         type="text"
@@ -55,7 +55,7 @@ function New() {
                         onChange={(e) => setText(e.target.value)}
                         value={text}
                     />
-                    <button onClick={() => handleClick(tech, client, text)}>Valider</button>
+                    <button type='submit'>Valider</button>
                 </form>
             </div>
         </div>
